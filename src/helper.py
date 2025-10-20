@@ -1,7 +1,7 @@
 # src/helper.py
 from langchain_community.document_loaders import PyPDFLoader, DirectoryLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain_community.embeddings import HuggingFaceEmbeddings  # <-- keep this
+from langchain_openai import OpenAIEmbeddings  # OpenAI embeddings use kar rahe
 
 def load_pdf_file(data):
     loader = DirectoryLoader(data, glob="*.pdf", loader_cls=PyPDFLoader)
@@ -12,5 +12,5 @@ def text_split(extracted_data):
     return splitter.split_documents(extracted_data)
 
 def download_hugging_face_embeddings():
-    # local model, no token needed
-    return HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
+    
+    return OpenAIEmbeddings(model="text-embedding-3-small")

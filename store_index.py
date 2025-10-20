@@ -13,10 +13,10 @@ load_dotenv()
 PINECONE_API_KEY = os.environ.get("PINECONE_API_KEY")
 if not PINECONE_API_KEY:
     raise RuntimeError("PINECONE_API_KEY is not set")
-
 pc = Pinecone(api_key=PINECONE_API_KEY)
+
 index_name = "medicalbot"
-dimension = 384  # all-MiniLM-L6-v2
+dimension = 1536  # OpenAI text-embedding-3-small
 
 # --- 2) Make sure the index exists (create if missing) ---
 existing = [i["name"] for i in pc.list_indexes().indexes]
@@ -31,8 +31,8 @@ if index_name not in existing:
 else:
     print(f"[pinecone] index '{index_name}' already exists, will reuse it.")
 
-# optional: wait until ready (usually quick)
-for _ in range(30):
+# optional: wait until ready
+for _ in range(60):
     try:
         d = pc.describe_index(index_name)
         if d and d.status and d.status.get("ready"):
@@ -43,14 +43,13 @@ for _ in range(30):
 print("[pinecone] index is ready.")
 
 # --- 3) Load your PDF(s), split, embeddings ---
-# NOTE: your PDF is inside the 'Data/' folder
 docs = load_pdf_file(data="Data/")
 print(f"[data] loaded {len(docs)} document(s)")
 
 chunks = text_split(docs)
 print(f"[data] split into {len(chunks)} chunks")
 
-embeddings = download_hugging_face_embeddings()
+embeddings = download_hugging_face_embeddings()  # returns OpenAIEmbeddings internally
 print("[embeddings] ready")
 
 # --- 4) Upsert chunks into Pinecone ---
