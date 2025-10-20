@@ -1,12 +1,14 @@
 flask==3.0.3
 gunicorn==22.0.0
 python-dotenv==1.0.1
-langchain==0.2.10
-langchain-community==0.2.10
+
+langchain==0.2.6
+langchain-community==0.2.6
 langchain-openai==0.1.7
-langchain-pinecone==0.1.1
+langchain-pinecone==0.0.3
+
+sentence-transformers==2.2.2
+langchain-huggingface==0.1.0
 pypdf==4.2.0
+
 pinecone-client==3.2.2
-pinecone-plugin-interface==0.0.7
-# for HF Inference API embeddings
-huggingface-hub==0.24.6
