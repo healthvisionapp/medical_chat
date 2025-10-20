@@ -1,11 +1,18 @@
-sentence-transformers
-langchain
-flask
-pypdf
-python-dotenv
+flask==3.0.3
+gunicorn==22.0.0
+python-dotenv==1.0.1
+
+# LangChain + integrations (versions aligned)
+langchain==0.0.352
+langchain_openai==0.0.2
+langchain_pinecone==0.0.3
+langchain-community==0.0.20
+
+# Embeddings + PDF
+sentence-transformers==2.2.2
+pypdf==4.2.0
+
+# Pinecone (serverless client via langchain_pinecone)
+pinecone-client==3.2.2
+pinecone-plugin-interface==0.0.7
 pinecone[grpc]
-langchain-pinecone
-langchain_community
-langchain_openai
-langchain_experimental
--e .

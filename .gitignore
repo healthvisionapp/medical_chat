@@ -1,26 +1,5 @@
-# ignore Python caches
-__pycache__/
-*.pyc
-
-# ignore virtual environments and conda folders
-.venv/
-.conda/
-env/
-venv/
-Lib/
-Scripts/
-Include/
-
-# ignore local data
 Data/
-research/
-*.h5
-*.zip
-*.tar
-*.gz
-
-# ignore environment files
 .env
-
-# ignore Jupyter temp files
-.ipynb_checkpoints/
+__pycache__/
+.conda/
+*.h5
