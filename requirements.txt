@@ -1,17 +1,12 @@
 flask==3.0.3
 gunicorn==22.0.0
 python-dotenv==1.0.1
-
-# LangChain stack (compatible with Python 3.11)
 langchain==0.2.10
 langchain-community==0.2.10
 langchain-openai==0.1.7
 langchain-pinecone==0.1.1
-# (optional pin if you want) langchain-core==0.2.43
-
-# Embeddings + PDF
-sentence-transformers==2.2.2
 pypdf==4.2.0
-
 pinecone-client==3.2.2
 pinecone-plugin-interface==0.0.7
+# for HF Inference API embeddings
+huggingface-hub==0.24.6
