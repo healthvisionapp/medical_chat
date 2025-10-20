@@ -8,7 +8,6 @@ langchain-openai==0.1.7
 langchain-pinecone==0.1.1
 
 sentence-transformers==2.2.2
-langchain-huggingface==0.1.0
 pypdf==4.2.0
 
 pinecone-client==3.2.2
