@@ -1,5 +1,4 @@
-Data/
-.env
 __pycache__/
-.conda/
-*.h5
+*.pyc
+.venv/
+.env
