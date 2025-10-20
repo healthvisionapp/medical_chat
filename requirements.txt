@@ -2,7 +2,7 @@ flask==3.0.3
 gunicorn==22.0.0
 python-dotenv==1.0.1
 
-# LangChain ecosystem (compatible with Koyeb)
+# LangChain ecosystem (compatible with Python 3.11 on Koyeb)
 langchain==0.2.6
 langchain-openai==0.1.7
 langchain-pinecone==0.0.3
